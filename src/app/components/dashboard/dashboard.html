@@ -1,0 +1,128 @@
+@if (isBudgetSeted() && admin.userRole() === 'admin') {
+<div class="modal">
+    <h2>Before we get started, let's set your initial budget</h2>
+    <input type="number" [value]="userBudget()" (input)="updateValue($event)" placeholder="Enter your budget" />
+    <button (click)="setBuget()">Set Budget</button>
+</div>
+}
+
+@if (showModal() && admin.userRole() === 'admin') {
+<div class="modal-overlay">
+    <app-transaction-form (onSubmit)="handleNewEntry($event)" (onCancel)="showModal.set(false)">
+    </app-transaction-form>
+</div>
+}
+
+<div class="dashboard" [class.blur]="(isBudgetSeted() || showModal()) && admin.userRole() === 'admin'">
+    
+    <div class="cards">
+        <div class="card1">
+            <p>Current Balance:</p>
+            <p class="amount">₾{{ currentBalance() }}</p>
+        </div>
+
+        <div class="card1">
+            <p>Total Income:</p>
+            <p class="amount" style="color: green;">+₾{{ totalIncome() }}</p>
+        </div>
+
+        <div class="card1">
+            <p>Total Outcome:</p>
+            <p class="amount" style="color: red;">-₾{{ totalExpense() }}</p>
+        </div>
+    </div>
+
+    <div class="grapics">
+        <div class="chart-container">
+            <canvas #myChart></canvas>
+        </div>
+
+        <div class="analysis-section">
+            <div class="chart-box">
+                <div class="chart-container">
+                    <canvas #categoryChart></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="tableDiv">
+            
+            @if (admin.userRole() === 'admin') {
+                <div class="filters">
+                    <div class="filter-container">
+                        <button [class.active]="filterStatus() === 'all'" (click)="setFilter('all')">All</button>
+                        <button [class.active]="filterStatus() === 'income'" (click)="setFilter('income')">Income</button>
+                        <button [class.active]="filterStatus() === 'expense'" (click)="setFilter('expense')">Expenses</button>
+                    </div>
+                    <button class="add-btn" (click)="showModal.set(true)">Add New Transaction</button>
+                </div>
+            }
+
+            <div class="transactions-table">
+                <div class="table-header">
+                    <div class="column">DATE</div>
+                    <div class="column">DESCRIPTION</div>
+                    <div class="column">CATEGORY</div>
+                    <div class="column">AMOUNT</div>
+                    
+                    @if (admin.userRole() === 'admin') {
+                        <div class="column">ACTIONS</div>
+                    }
+                </div>
+
+                <div class="table-body">
+                    @for (item of (admin.userRole() === 'admin' ? filteredTransactions() : transactions()); track item.id) {
+                    <div class="table-row">
+                        <div class="cell date">{{ item.date || 'Today' }}</div>
+
+                        <div class="cell description">
+                            <span class="status-dot" [class.income]="item.type === 'income'"></span>
+                            {{ item.description }}
+                        </div>
+
+                        <div class="cell">
+                            <span class="category-tag">{{ item.category }}</span>
+                        </div>
+
+                        <div class="numb" [class.expense-text]="item.type === 'expense'">
+                            {{ item.type === 'income' ? '+' : '-' }}₾{{ item.amount }}
+                        </div>
+
+                        @if (admin.userRole() === 'admin') {
+                            <div class="removbtn">
+                                <button (click)="removeTransaction(item.id)">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                                        <path fill="#a60404" fill-rule="evenodd" d="M9.774 5L3.758 3.94l.174-.986a.5.5 0 0 1 .58-.405L18.411 5h.088h-.087l1.855.327a.5.5 0 0 1 .406.58l-.174.984l-2.09-.368l-.8 13.594A2 2 0 0 1 15.615 22H8.386a2 2 0 0 1-1.997-1.883L5.59 6.5h12.69zH5.5zM9 9l.5 9H11l-.4-9zm4.5 0l-.5 9h1.5l.5-9zm-2.646-7.871l3.94.694a.5.5 0 0 1 .405.58l-.174.984l-4.924-.868l.174-.985a.5.5 0 0 1 .58-.405z"/>
+                                    </svg>
+                                </button>
+                            </div>
+                        }
+                    </div>
+                    } @empty {
+                    <div class="no-data">No transactions found.</div>
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="stats-summary">
+            <div class="stats-info">
+                <p>Top Spending Category: <strong>{{ getTopCategory() }}</strong></p>
+                <p>Total Data Points: <strong>{{ transactions().length }}</strong></p>
+            </div>
+
+            @if (admin.userRole() === 'admin') {
+                <button class="download-btn" (click)="downloadPDF()">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v4"></path>
+                        <polyline points="7 10 12 15 17 10"></polyline>
+                        <line x1="12" y1="15" x2="12" y2="3"></line>
+                    </svg>
+                    Download PDF Report
+                </button>
+            }
+        </div>
+    </div>
+</div>

@@ -1,0 +1,44 @@
+<form (submit)="$event.preventDefault()">
+    <h1>New Entry</h1>
+    
+    <label>Description</label>
+    <input type="text" placeholder="Transaction Name" [(ngModel)]="desc" name="desc">
+    
+    <label>Amount ($)</label>
+    <input type="number" placeholder="0.00" [(ngModel)]="amount" name="amount">
+    
+    <label>Category</label>
+    <select name="category" [(ngModel)]="category">
+        <option value="food">Food & Dining</option>
+        <option value="transport">Transport</option>
+        <option value="education">Education</option>
+        <option value="travel">Travel</option>
+        <option value="lifestyle" selected>Lifestyle</option>
+        <option value="salary">Salary</option>
+        <option value="utilities">Utilities</option>
+    </select>
+
+    <div class="choose">
+        <label>Transaction Type</label>
+        <div class="btns">
+            <button type="button" 
+                class="type-btn"
+                [class.active-income]="selectedType() === 'income'" 
+                (click)="setType('income')">
+                Income
+            </button>
+
+            <button type="button" 
+                class="type-btn"
+                [class.active-expense]="selectedType() === 'expense'" 
+                (click)="setType('expense')">
+                Outcome
+            </button>
+        </div>
+    </div>
+
+    <div class="actions">
+        <button type="button" class="add-btn" (click)="addTransaction()">Add Transaction</button>
+        <button type="button" class="cancel-btn" (click)="closeModal()">Cancel</button>
+    </div>
+</form>

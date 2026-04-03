@@ -1,1 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playwrite+NZ+Basic:wght@100..400&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    list-style-type: none;
+    text-decoration: none;
+    border: none;
+}
+
+:root {
+    --bg-color: #f8fafc; 
+    --text-color: #0f172a;
+    --header-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --icon-fill: #334155;
+    --bg-btn-color: #ffffff;
+    --box-border-color: rgba(0, 0, 0, 0.05);
+    --input-col: #e2e8f0;
+   --chart-fill: rgba(53, 114, 102, 0.4);
+  --chart-grid: rgba(0, 0, 0, 0.05);
+  --btn: linear-gradient(135deg, #ceccccc5 10%, rgba(75, 4, 126, 0.559) 50%, #0410b0aa 80%);
+
+    
+}
+
+[data-theme="dark"] {
+    --bg-color: #020617;
+    --text-color: #f1f5f9;
+    --header-shadow: 0 10px 30px -5px rgba(0, 0, 0, 0.7);
+    --icon-fill: #f8fafc;
+    --bg-btn-color: #0f172a; 
+    --box-border-color: rgba(25, 24, 24, 0.834);
+    --input-col: #334155;
+    --chart-fill: rgba(163, 187, 173, 0.3);
+  --chart-grid: rgba(255, 255, 255, 0.1);
+  --btn:linear-gradient(135deg, rgb(95, 95, 95), #1b263b 100%);
+    
+
+}
+
+body {
+    max-width: 1920px;
+    width: 100%;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+input, button {
+    cursor: pointer;
+    background: none;
+}
