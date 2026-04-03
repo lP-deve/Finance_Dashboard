@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # EcData
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.1.0.
@@ -57,3 +58,6 @@ Angular CLI does not come with an end-to-end testing framework by default. You c
 ## Additional Resources
 
 For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+=======
+# Finance_Dashboard
+>>>>>>> 87ca5eee06b02b5d08aafe74e67b396b097bddae
