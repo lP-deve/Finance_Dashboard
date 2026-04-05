@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
-import { ThemeService } from '../Services/theme.service/theme.service';
+import { ThemeService } from '../Services/theme.service.js';
 import { RouterModule } from '@angular/router';
-import { AdminTs } from '../Services/admin.ts'; // This is your Role Service
+import { AdminTs } from '../Services/admin.ts'; 
 
 @Component({
   selector: 'app-header',

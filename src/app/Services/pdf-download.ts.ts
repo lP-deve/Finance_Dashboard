@@ -7,15 +7,7 @@ import { jsPDF } from 'jspdf';
 })
 export class  PdfDownloadTs   {
 
-  /**
-   * Generates and downloads a Financial Wealth Report
-   * @param userBudget 
-   * @param totalIncome 
-   * @param totalExpense 
-   * @param currentBalance 
-   * @param topCategory 
-   * @param transactions 
-   */
+  
   downloadWealthReport(
     userBudget: number,
     totalIncome: number,
@@ -27,16 +19,15 @@ export class  PdfDownloadTs   {
     const doc = new jsPDF();
     const date = new Date().toLocaleDateString();
 
-    // --- Styling & Header ---
+
     doc.setFontSize(20);
-    doc.setTextColor(63, 2, 148); // Purple brand color
+    doc.setTextColor(63, 2, 148); 
     doc.text('Financial Wealth Report', 10, 20);
 
     doc.setFontSize(10);
     doc.setTextColor(100);
     doc.text(`Generated on: ${date}`, 10, 30);
 
-    // --- Summary Section ---
     doc.setFontSize(14);
     doc.setTextColor(0);
     doc.text('Summary', 10, 45);

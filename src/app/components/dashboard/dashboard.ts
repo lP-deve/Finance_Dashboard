@@ -3,8 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { TransactionForm } from '../transaction-form/transaction-form';
 import { Chart, registerables } from 'chart.js';
 import { getBalanceChartConfig, getCategoryChartConfig } from '../../Services/carts.ts';
-import { PdfDownloadTs } from '../../Services/pdf-download.ts/pdf-download.ts';
-import { AdminTs } from '../../Services/admin.ts'; // IMPORT YOUR SERVICE
+import { PdfDownloadTs } from '../../Services/pdf-download.ts';
+import { AdminTs } from '../../Services/admin.ts'; 
 
 Chart.register(...registerables);
 

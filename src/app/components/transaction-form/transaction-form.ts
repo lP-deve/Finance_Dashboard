@@ -38,14 +38,13 @@ export class TransactionForm {
       date: new Date().toLocaleDateString()
     };
 
-    // Emit using the new name
     this.onSubmit.emit(entry);
     
     this.resetForm();
   }
 
   closeModal() {
-    // Emit using the new name
+
     this.onCancel.emit();
   }
 

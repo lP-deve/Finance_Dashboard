@@ -1,6 +1,6 @@
 form {
-    width: 90%;
-    max-width: 1000px;
+    width: 80%;
+    max-width: 800px;
     padding: 40px 28px;
     display: flex;
     flex-direction: column;
@@ -137,6 +137,7 @@ select option {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap:16px;
+    width: 100%;
 
 }
 label{
