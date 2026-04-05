@@ -10,20 +10,20 @@
 }
 
 :root {
-    --bg-color: #f8fafc; 
+    --bg-color: #e9f0f8; 
     --text-color: #0f172a;
     --header-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
-    --icon-fill: #334155;
-    --bg-btn-color: #f3f3f3;
+    --icon-fill: hsl(210, 4%, 21%);
+    --bg-btn-color: #f0f6f8;
     --box-border-color: rgba(0, 0, 0, 0.05);
-    --input-col: #e2e8f0;
+    --input-col: #f6f6f6;
    --chart-fill: rgba(53, 114, 102, 0.4);
   --chart-grid: rgba(0, 0, 0, 0.05);
   --btn: linear-gradient(135deg, var(--text-color) 10%, #6202bbac 100%);
-  --hover: linear-gradient(135deg, #2d132c, #801336);
-  --hover-col: linear-gradient(135deg, #ae0606, #29020e);
-   --text: rgb(248, 248, 248);
-   --categ: rgb(136, 0, 0);
+  --hover-col: linear-gradient(135deg,#20466c, #354998 );
+  --hover: linear-gradient(135deg, #748cab, #262627);
+   --text: rgb(255, 252, 252);
+   --categ: rgb(61, 61, 61);
      --scale:grayscale(1)
 }
 
@@ -38,8 +38,8 @@
     --input-col: #334155;
     --chart-fill: rgba(163, 187, 173, 0.3);
   --chart-grid: rgba(255, 255, 255, 0.1);
- --hover: linear-gradient(135deg, #1e1c2e, #172451);
- --hover-col: linear-gradient(135deg, #264a70, #323347);
+  --hover-col: linear-gradient(135deg, #0d1321, #1d2d44);
+ --hover: linear-gradient(135deg, #000328b0,#00458eab);
   --categ:linear-gradient(135deg, #182e46,#323347);
   --scale:grayscale(0.3)
 }

@@ -76,7 +76,7 @@ button.active {
     letter-spacing: 2px;
     transform: scale(1.06);
     filter: brightness(1.4);
-    border: 1px solid rgb(255, 196, 0) !important;
+    border: 1px solid rgb(25, 0, 255) !important;
 
 }
 .align{

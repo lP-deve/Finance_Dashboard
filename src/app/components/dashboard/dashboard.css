@@ -42,7 +42,7 @@
     text-align: center;
     margin: 0;
     font-family: "Playwrite NZ Basic", cursive;
-    background: linear-gradient(135deg, var(--text-color) 30%, #961900 100%);
+    background: linear-gradient(135deg, var(--text-color) 30%, rgb(6, 29, 159) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -52,8 +52,8 @@ input {
     width: 100%;
     padding: 6px 20px;
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(219, 99, 99, 0.05) 0%, rgba(148, 3, 3, 0.158) 100%);
-    border: 1px solid rgba(198, 95, 95, 0.3);
+    background: linear-gradient(135deg, rgba(99, 143, 219, 0.05) 0%, rgba(3, 27, 148, 0.158) 100%);
+    border: 1px solid rgba(95, 133, 198, 0.3);
     color: var(--text-color);
     font-family: inherit;
     font-size: 1.1rem;
@@ -66,16 +66,16 @@ input {
 
 
 input::placeholder {
-    background: linear-gradient(135deg, var(--text-color) 30%, #830202 100%);
+    background: linear-gradient(135deg, var(--text-color) 30%,rgb(6, 29, 159)100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 0.7; 
 }
 
 input:focus {
-    background: linear-gradient(135deg, rgba(254, 40, 40, 0.1) 0%, rgba(103, 6, 6, 0.2) 100%);
-    border-color: #af0404;
-    box-shadow: 0 0 15px rgba(238, 101, 101, 0.2);
+    background: linear-gradient(135deg, rgba(40, 143, 254, 0.1) 0%, rgba(6, 59, 103, 0.2) 100%);
+    border-color: #2e58a8;
+    box-shadow: 0 0 15px rgba(101, 158, 238, 0.2);
     transform: scale(1.02);
 }
 
@@ -87,7 +87,7 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .modal button{
       background:var(--hover);
-    color: var(--bg-color);
+    color: rgb(255, 255, 255);;
     border: none;
     width: 100%;
     height: 42px;
@@ -138,10 +138,10 @@ input[type="number"]::-webkit-inner-spin-button {
       font-family: "Playwrite NZ Basic", cursive; 
 }
 .amount{
-    font-size: 26px!important;
+    font-size: 20px!important;
     font-weight: 600!important;
     font-family: "Playwrite NZ Basic", cursive;
-    background: linear-gradient(135deg, var(--text-color) 30%, #7b0202 100%);
+    background: linear-gradient(135deg, var(--text-color) 30%, rgb(6, 29, 159) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 
@@ -364,9 +364,9 @@ button:disabled {
 }
 
 .filter-container button.active {
-  background: #620801; 
+  background: rgb(6, 29, 159); 
   color: white;
-  box-shadow: 0 4px 12px rgba(229, 120, 70, 0.3);
+  box-shadow: 0 4px 12px rgba(70, 102, 229, 0.3);
 }
 
 .filter-container button:hover:not(.active) {

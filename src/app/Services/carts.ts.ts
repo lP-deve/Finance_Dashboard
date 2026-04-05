@@ -3,8 +3,8 @@ import { ChartConfiguration, Legend } from 'chart.js';
 export const getBalanceChartConfig = (ctx: CanvasRenderingContext2D, data: number[]): ChartConfiguration => {
   const lineGradient = ctx.createLinearGradient(0, 4, 400, 400);
   lineGradient.addColorStop(0, 'rgb(252, 252, 252)');
-  lineGradient.addColorStop(0.5, 'rgb(159, 6, 6)');
-  lineGradient.addColorStop(1, 'rgb(43, 3, 3)');
+  lineGradient.addColorStop(0.5, 'rgb(6, 29, 159)');
+  lineGradient.addColorStop(1, 'rgb(11, 3, 43)');
 
   return {
     type: 'line',
@@ -33,19 +33,19 @@ export const getBalanceChartConfig = (ctx: CanvasRenderingContext2D, data: numbe
           display: false 
         },
         tooltip: {
-          backgroundColor: '#bc220b',
+          backgroundColor: '#5573c0',
           padding: 12,
           displayColors: false,
           callbacks: {
             title: () => '',
-            label: (context: any) => `Balance: ${context.parsed.y.toLocaleString()} ₾`
+            label: (context: any) => `Balance: ${context.parsed.y.toLocaleString()} $`
           }
         }
       },
       scales: {
         y: {
           grid: { color: 'rgba(154, 151, 151, 0.47)' },
-          ticks: { callback: (val) => val.toLocaleString() + ' ₾' }
+          ticks: { callback: (val) => val.toLocaleString() + ' $' }
         },
         x: { 
           grid: { display: false }, 
@@ -69,11 +69,11 @@ export const getCategoryChartConfig = (labels: string[], amounts: number[]): Cha
         
         data: hasData ? amounts : [1],
         backgroundColor: hasData 
-          ? ['#a91f04', '#eded2a', '#eb9705', '#08c825', '#dc0a42', '#05c0e1'] 
-          : ['#570505'], 
+          ? ['#041aa9', '#242416', '#774e06', '#55483a', '#0a93dc', '#270303'] 
+          : ['#5573c0'], 
         hoverOffset: hasData ? 20 : 0, 
         borderWidth: 2,
-        borderColor: '#fffdfd'
+        borderColor: '#ffffff'
       }]
     },
     options: {
