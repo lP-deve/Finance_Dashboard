@@ -16,7 +16,6 @@ export class TransactionForm {
 
   selectedType = signal<'income' | 'expense'>('expense');
 
-  // UPDATED: Names must match what the Dashboard calls in its HTML
   onSubmit = output<any>(); 
   onCancel = output<void>();
 

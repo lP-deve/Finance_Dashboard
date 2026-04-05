@@ -9,11 +9,12 @@
     justify-content: center;
     gap: 32px;
     border: 1px solid var(--box-border-color);
-    box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 20px 40px -15px rgba(219, 111, 111, 0.158);
     position: relative;
     overflow: hidden;
     border-radius: 12px;
     transition: 0.3s;
+  
 
 }
 
@@ -29,7 +30,7 @@ h1 {
     line-height: 1.2;
     font-size: 48px;
     font-weight: 400; 
-      background: linear-gradient(135deg, var(--text-color) 30%, #9333ea 100%);
+      background: linear-gradient(135deg, var(--text-color) 30%, #a00404 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     letter-spacing: -1px;
@@ -48,7 +49,7 @@ h1 {
 
 .container button {
     padding: 16px 40px;
-    background: linear-gradient(135deg, var(--text-color) 10%, #6102bb 100%);
+    background: var(--hover);
     color: var(--bg-color);
     border: none;
     border-radius: 50px;
@@ -66,7 +67,7 @@ h1 {
     letter-spacing: 3px;
     transform: scale(1.002);
     filter: brightness(1.1);
-     background: linear-gradient(135deg, #4b078a 40%,  var(--text-color) 100%);
+     background: var(--hover-col);
     box-shadow: 0 15px 25px -2px rgba(0, 0, 0, 0.3);
 }
 
@@ -74,3 +75,36 @@ h1 {
     transform: scale(0.98);
 }
 
+@media screen and (max-width: 520px){
+    .container{
+        width: 86vw;
+    }
+    h1{
+        font-size: 22px!important;
+    }
+    .container p{
+        font-size: 16px !important;
+    } 
+    .container button{
+        width: 100% !important;
+        padding: 12px 12px;
+        font-size: 10px;
+    }
+}
+
+
+@media screen and (max-width: 1100px){
+    .container{
+        width: 86vw;
+    }
+    h1{
+        font-size: 32px;
+    }
+    .container p{
+        font-size: 20px;
+    } 
+    .container button{
+        width: 50%;
+    
+    }
+}

@@ -1,36 +1,50 @@
 <form (submit)="$event.preventDefault()">
     <h1>New Entry</h1>
-    
-    <label>Description</label>
-    <input type="text" placeholder="Transaction Name" [(ngModel)]="desc" name="desc">
-    
-    <label>Amount ($)</label>
-    <input type="number" placeholder="0.00" [(ngModel)]="amount" name="amount">
-    
-    <label>Category</label>
-    <select name="category" [(ngModel)]="category">
-        <option value="food">Food & Dining</option>
-        <option value="transport">Transport</option>
-        <option value="education">Education</option>
-        <option value="travel">Travel</option>
-        <option value="lifestyle" selected>Lifestyle</option>
-        <option value="salary">Salary</option>
-        <option value="utilities">Utilities</option>
-    </select>
+    <div class="align">
+        <div>
+            <label>Description</label>
+            <input type="text" placeholder="Transaction Name" [(ngModel)]="desc" name="desc">
+        </div>
+        <div>
+            <label>Amount</label>
+            <input type="number" placeholder="0.00" [(ngModel)]="amount" name="amount">
+        </div>
+
+    </div>
+    <div class="categ">
+        <div class="custom-dropdown">
+            <div class="dropdown-trigger">
+                Category: <strong>{{ category | titlecase }}</strong>
+            </div>
+
+            <div class="dropdown-menu">
+                <div class="choices">
+                    <div class="category-item" (click)="category = 'food'"><p>Food & Dining</p></div>
+                    <div class="category-item" (click)="category = 'salary'"><p>Salary</p>
+                    </div>
+                </div>
+                <div class="choices">
+                    <div class="category-item" (click)="category = 'education'"><p>Education</p>
+                    </div>
+                    <div class="category-item" (click)="category = 'travel'"><p>Travel</p></div>
+                </div>
+                <div class="choices">
+                    <div class="category-item" (click)="category = 'lifestyle'"><p>Lifestyle</p></div>
+                    <div class="category-item" (click)="category = 'utilities'"><p>Utilities</p></div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <div class="choose">
         <label>Transaction Type</label>
         <div class="btns">
-            <button type="button" 
-                class="type-btn"
-                [class.active-income]="selectedType() === 'income'" 
+            <button type="button" class="type-btn" [class.active-income]="selectedType() === 'income'"
                 (click)="setType('income')">
                 Income
             </button>
 
-            <button type="button" 
-                class="type-btn"
-                [class.active-expense]="selectedType() === 'expense'" 
+            <button type="button" class="type-btn" [class.active-expense]="selectedType() === 'expense'"
                 (click)="setType('expense')">
                 Outcome
             </button>

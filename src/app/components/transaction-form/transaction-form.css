@@ -1,6 +1,6 @@
 form {
     width: 90%;
-    max-width: 500px;
+    max-width: 1000px;
     padding: 40px 28px;
     display: flex;
     flex-direction: column;
@@ -108,32 +108,125 @@ select option {
 }
 
 .actions button:first-child {
-    background: var(--btn);
-    color: var(--text-color);
-        opacity: 0.6;
-    box-shadow: 0 4px 12px rgba(59, 130, 246, 0.25);
+    background: var(--hover);
+    color: rgb(255, 255, 255);
+        opacity: 0.8;
+    box-shadow: 0 4px 12px rgba(207, 158, 158, 0.25);
 }
 
 .actions button:first-child:hover {
      opacity: 1;
     transform: translateY(-2px);
+    background: var(--hover-col);
 }
 
 .actions button:last-child {
-    background: var(--btn);
-    color: var(--text-color);
-    opacity: 0.7;
+    background: var(--hover);
+    color: rgb(255, 255, 255);
+        opacity: 0.6;
+    opacity: 0.8;
 }
 
 .actions button:last-child:hover {
-    opacity: 1;
+      opacity: 1;
     transform: translateY(-2px);
+    background: var(--hover-col);
+}
+
+.align{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap:16px;
+
+}
+label{
+    color:var(--text-color);
+    font-family: cursive;
+    font-size: 14px;
+}
+.categ{
+    width: 100%;
+}
+input, select{
+    margin-top: 6px;
 }
 
 
-@media (max-width: 640px) {
+.custom-dropdown {
+    position: relative;
+    width: 100%;
+  
+
+}
+
+.dropdown-trigger {
+    background:var(--categ); 
+    color: white;
+    padding: 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    text-align: center;
+}
+.choices{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+.choices p{
+    color:var(--text-color)
+}
+.choices p:hover{
+    color:var(--text);
+}
+.dropdown-menu {
+    display: none; 
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    background: var(--bg-btn-color);
+    border-radius: 8px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.3);
+    z-index: 100;
+    overflow: hidden;
+    
+}
+
+.custom-dropdown:hover .dropdown-menu {
+    display: block;
+
+}
+
+.category-item {
+    padding: 12px;
+    color: #efefef;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.category-item:hover {
+    background: var(--hover-col); 
+    border-radius: 8px; 
+}
+@media screen and (max-width: 520px) {
     form {
-        width: 95%;
-        padding: 32px 20px;
+        width: 90vw;
     }
+    h1{
+        font-size: 22px;
+    }
+    .btns, .align{
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    form {
+        max-width: 800px!important;
+        width: 90%;
+        margin:auto;
+    }
+    h1{
+        font-size: 22px;
+    }
+    
 }

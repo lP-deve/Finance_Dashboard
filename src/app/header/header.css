@@ -21,42 +21,80 @@ header {
 }
 
 .logo p {
-    font-family: "Playwrite NZ Basic", cursive; 
-    font-size: 14px;
-    margin: 0; 
+    font-family: "Playwrite NZ Basic", cursive;
+    font-size: 16px;
+    margin: 0;
     cursor: pointer;
 }
+
 svg {
     width: 26px;
     height: 26px;
-    fill: var(--text-color); 
+    fill: var(--text-color);
     transition: fill 0.3s ease;
     cursor: pointer;
 }
+
 .logo svg path {
     fill: var(--icon-fill) !important;
     transition: fill 0.3s ease;
 }
-.btns{
+
+.btns {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap:20px;
+    gap: 20px;
 }
-.btns button{
-    padding: 8px 22px;
-    border:1px solid  #4b078a;
-    background: var(--btn);
-    color: var(--text-color);
-    border-radius: 4px;
+
+.btns button {
+    height: 36px;
+    width: 100%;
+    padding-inline: 16px;
+    border: 1px solid #4b078a;
+    background: var(--hover);
+    color: rgb(255, 255, 255);
+    border-radius: 8px;
     font-size: 14px;
-    border:none;
+    border: none;
+    font-weight: 600;
     font-family: "Montserrat", sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    transition: 0.3s;
 }
 
 .btns button:hover {
-    background-color: var(--text-color);
-    color: var(--bg-btn-color);
-    border-color: var(--text-color);
+    letter-spacing: 2px;
+    transform: scale(1.002);
+    filter: brightness(1.1);
+
+
+    box-shadow: 0 15px 25px -2px rgba(0, 0, 0, 0.3);
+}
+
+button.active {
+    background: var(--hover-col) !important;
+    letter-spacing: 2px;
+    transform: scale(1.06);
+    filter: brightness(1.4);
+    border: 1px solid rgb(255, 196, 0) !important;
+
+}
+.align{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap:22px;
+}
+
+@media screen and (max-width:520px) {
+    .logo p {
+        display: none;
+    }
+
+    header {
+        padding: 18px 12px;
+    }
+    .btns button{
+        padding-inline: 10px;
+    }
 }

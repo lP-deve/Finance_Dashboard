@@ -42,7 +42,7 @@
     text-align: center;
     margin: 0;
     font-family: "Playwrite NZ Basic", cursive;
-    background: linear-gradient(135deg, var(--text-color) 30%, #9333ea 100%);
+    background: linear-gradient(135deg, var(--text-color) 30%, #961900 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -52,8 +52,8 @@ input {
     width: 100%;
     padding: 6px 20px;
     border-radius: 12px;
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.05) 0%, rgba(147, 51, 234, 0.1) 100%);
-    border: 1px solid rgba(147, 51, 234, 0.3);
+    background: linear-gradient(135deg, rgba(219, 99, 99, 0.05) 0%, rgba(148, 3, 3, 0.158) 100%);
+    border: 1px solid rgba(198, 95, 95, 0.3);
     color: var(--text-color);
     font-family: inherit;
     font-size: 1.1rem;
@@ -66,16 +66,16 @@ input {
 
 
 input::placeholder {
-    background: linear-gradient(135deg, var(--text-color) 30%, #9333ea 100%);
+    background: linear-gradient(135deg, var(--text-color) 30%, #830202 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     opacity: 0.7; 
 }
 
 input:focus {
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1) 0%, rgba(147, 51, 234, 0.2) 100%);
-    border-color: #9333ea;
-    box-shadow: 0 0 15px rgba(147, 51, 234, 0.2);
+    background: linear-gradient(135deg, rgba(254, 40, 40, 0.1) 0%, rgba(103, 6, 6, 0.2) 100%);
+    border-color: #af0404;
+    box-shadow: 0 0 15px rgba(238, 101, 101, 0.2);
     transform: scale(1.02);
 }
 
@@ -86,7 +86,7 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 
 .modal button{
-      background: linear-gradient(135deg, var(--text-color) 10%, #6102bb 100%);
+      background:var(--hover);
     color: var(--bg-color);
     border: none;
     width: 100%;
@@ -99,7 +99,7 @@ input[type="number"]::-webkit-inner-spin-button {
   
 }
 .modal button:hover{
-     background: linear-gradient(135deg, #4b078a 40%,  var(--text-color) 100%);
+    background:var(--hover-col);
       letter-spacing: 3px;
     transform: scale(1.002);
     filter: brightness(1.1);
@@ -132,17 +132,19 @@ input[type="number"]::-webkit-inner-spin-button {
 }
 .card1 p{
     color: var(--text-color);
-    font-size: 20px;
+    font-size: 18px;
     font-weight: 500;
     opacity: 0.8;
+      font-family: "Playwrite NZ Basic", cursive; 
 }
 .amount{
-    font-size: 24px;
-    font-weight: 600;
+    font-size: 26px!important;
+    font-weight: 600!important;
     font-family: "Playwrite NZ Basic", cursive;
-    background: linear-gradient(135deg, var(--text-color) 30%, #9333ea 100%);
+    background: linear-gradient(135deg, var(--text-color) 30%, #7b0202 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+
 }
 
 
@@ -152,10 +154,11 @@ input[type="number"]::-webkit-inner-spin-button {
     margin: auto;
     margin-top: 80px;
     gap: 32px;
-    margin-bottom: 120px;
+    margin-bottom: 220px;
     align-items: center;
     justify-content: space-between;
     display: flex;
+
 }
 
 .transactions-table {
@@ -216,8 +219,8 @@ input[type="number"]::-webkit-inner-spin-button {
 
 .expense-text { color: #ff4d4d; }
 .add-btn{
-    background: var(--btn);
-    color:var(--text-color);
+    background: var(--hover);
+      color: rgb(255, 255, 255);
     border: none;
     width: 20%;
     height: 38px;
@@ -238,9 +241,9 @@ input[type="number"]::-webkit-inner-spin-button {
 
 
 .add-btn:hover{
-     background-color: var(--text-color);
-    color: var(--bg-btn-color);
-    border-color: var(--text-color);
+        transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(226, 165, 161, 0.3);
+    background: var(--hover-col);
 }
 
 
@@ -283,6 +286,11 @@ canvas{
 
     
 }
+button:disabled {
+    cursor: not-allowed;
+    opacity: 0.5;
+    filter: var(--scale);
+}
 
 .stats-summary {
     display: flex;
@@ -298,7 +306,7 @@ canvas{
 .stats-summary p {
     margin: 0;
     font-size: 18px;
-    font-family:'\"montserrat\", sans-serif';
+      font-family: "Playwrite NZ Basic", cursive; 
     line-height: 150%;
     color: var(--text-color);
     opacity: 0.8;
@@ -308,8 +316,8 @@ canvas{
     display: flex;
     align-items: center;
     gap: 8px;
-    background: var(--btn); 
-    color: var(--text-color);
+    background: var(--hover); 
+      color: rgb(255, 255, 255);
     border: none;
     padding: 10px 18px;
     border-radius: 8px;
@@ -319,9 +327,9 @@ canvas{
 }
 
 .download-btn:hover {
-    background: #5a12d1;
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(63, 2, 148, 0.3);
+    box-shadow: 0 4px 12px rgba(223, 154, 154, 0.3);
+    background: var(--hover-col);
 }
 
 .download-btn svg {
@@ -347,7 +355,7 @@ canvas{
 .filter-container button {
   background: transparent;
   border: none;
-  color: #a0aec0;
+  color: #b3b0ab;
   padding: 8px 16px;
   border-radius: 8px;
   cursor: pointer;
@@ -356,14 +364,14 @@ canvas{
 }
 
 .filter-container button.active {
-  background: #4f46e5; 
+  background: #620801; 
   color: white;
-  box-shadow: 0 4px 12px rgba(79, 70, 229, 0.3);
+  box-shadow: 0 4px 12px rgba(229, 120, 70, 0.3);
 }
 
 .filter-container button:hover:not(.active) {
   background: rgba(255, 255, 255, 0.1);
-  color: white;
+  color: rgb(255, 254, 254);
 }
 .filters{
     display: flex;
@@ -373,7 +381,115 @@ canvas{
 }
 .filter-container{
   display: flex;
-
     align-items: center;
     justify-content: center;   
+}
+.no-data{
+    text-align: center;
+    font-size: 16px;
+    font-family: cursive;
+    opacity: 0.7;
+    margin:16px;
+}
+
+
+@media screen and (max-width:560px){
+
+    .stats-summary p{
+    
+        font-size: 14px;
+    }
+    .filter-container button{
+       padding: 6px 10px;
+       font-size: 12px;
+    }
+    .transactions-table{
+        width: 100%;
+    }
+    .tableDiv{
+        overflow: scroll;
+    }
+    .transactions-table{
+      min-width: 700px;
+    }
+    .add-btn{
+         width: 100%!important;
+         padding-inline:20px!important
+         
+    }
+    .download-btn{
+      font-size: 12px;
+    }
+     .modal h2{
+        font-size: 16px!important;
+    }
+}
+
+
+@media screen and (max-width:1100px){
+    .modal{
+        width: 86vw;
+    }
+    .modal input{
+        width: 70%;
+    }
+    .modal button{
+        width: 70%;
+    }
+    .modal h2{
+        font-size: 24px;
+    }
+    .cards{
+        grid-template-columns: 1fr;
+        width: 90vw;
+    }
+    .amount{
+        font-size: 18px!important;
+    }
+    .card1 p{
+        font-size: 14px;
+        font-weight: 600;
+    }
+    .grapics{
+        grid-template-columns: 1fr;
+        width: 90vw;
+    }
+    .main{
+        flex-direction: column;
+        width: 90vw;
+    }
+    .stats-summary{
+        width: 90vw;
+        
+    }
+    .stats-summary p{
+    
+        font-size: 16px;
+    }
+    .filter-container button{
+       padding: 6px 10px;
+       font-size: 12px;
+    }
+    .transactions-table{
+        width: 100%;
+    }
+    .tableDiv{
+        overflow: scroll;
+        width: 100%;
+    }
+    .transactions-table{
+      min-width: 700px;
+    }
+    .add-btn{
+         width: 50%!important;
+         padding-inline:10px!important
+         
+    }
+    .filters{
+        width: 100%;
+    }
+    .download-btn{
+      font-size: 12px;
+    }
+    
 }

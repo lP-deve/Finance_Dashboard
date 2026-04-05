@@ -125,7 +125,7 @@ export class Dashboard implements OnInit, AfterViewInit {
 
   getTopCategory(): string {
     const data = this.expenseByCategory();
-    if (data.amounts.length === 0) return 'N/A';
+    if (data.amounts.length === 0) return 'No Spendings yet!';
     const maxAmount = Math.max(...data.amounts);
     const index = data.amounts.indexOf(maxAmount);
     return data.labels[index];
