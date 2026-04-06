@@ -18,10 +18,10 @@ footer{
 @media screen and (max-width:520px){
    
     footer{
-        padding:16px 12px;
+        padding:16px 12px!important;
     }
     p{
-        font-size: 12px;
+        font-size: 12px!important;
     }
 }
 
